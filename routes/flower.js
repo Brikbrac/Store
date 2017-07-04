@@ -34,7 +34,11 @@ router.get('/get/:id', (req, res, next) => {
 });
 
 router.get('/edit/:id', (req, res, next) => {
-  
+  new Model.Model( db => {
+    db.collection('flowers')
+      .updateOne({_id : objectID(req.params.id)}, {
+      })
+  });
 });
 
 
