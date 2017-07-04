@@ -40,7 +40,7 @@ router.get('/add', (req, res, next) => {
         res.json([{msg:'Mail undefined', type : 'Error'}]); return false; };
     
     if(typeof req.query.password == "undefined") { 
-        res.json([{msg:'Mail undefined', type : 'Error'}]); return false; };
+        res.json([{msg:'Password undefined', type : 'Error'}]); return false; };
 
     new Model.Model( db => {
         var user = db.collection('users');
