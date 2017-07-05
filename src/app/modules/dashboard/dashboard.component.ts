@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../../services/hero';
-import { HeroService } from '../../services/hero.service';
+import { Flower } from '../../services/flower';
+import { FlowerService } from '../../services/flower.service';
+
 
 @Component({
   selector: 'my-dashboard',
@@ -10,12 +11,18 @@ import { HeroService } from '../../services/hero.service';
 })
 export class DashboardComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  flowers: Flower[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private flowerService: FlowerService) { }
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+    this.flowerService.getFlowers()
+      .then(f_ => {
+        this.flowers = f_ as Flower[];
+        console.log(this.flowers);
+        console.log(f_);
+      });
+    
+    
   }
 }

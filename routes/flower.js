@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
   new Model.Model( db => {
         db.collection('flowers')
         .find({})
-        .project({_id : 0})
         .toArray((error, r) => {
             res.json(r);
             db.close();
