@@ -7,8 +7,7 @@ import { FlowerService } from '../../services/flower.service';
 
 @Component({
     selector: "flowers-details",
-    templateUrl: "",
-    styleUrls: [""]
+    templateUrl: "./flower.component.html"
 })
 
 export class flowerComponent implements OnInit{
@@ -23,5 +22,13 @@ export class flowerComponent implements OnInit{
         this.route.paramMap
             .switchMap((params: ParamMap) => this.flowerService.getFlower(params.get('id') as string))
             .subscribe(data => this.flower = data);
+    }
+
+    delete() : void{
+        this.flowerService.delete(this.flower)
+            .then(() => {
+                this.location.go('/');
+            })
+            .catch((err) => console.error('An error occurred', err));
     }
 }

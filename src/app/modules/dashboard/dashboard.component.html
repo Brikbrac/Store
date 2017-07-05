@@ -1,8 +1,39 @@
-<h3>Top Flowers</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let flower of flowers"  [routerLink]="['/product', flower._id]"  class="col-1-4">
-    <div class="module hero">
-      <h4>{{flower.name}}</h4>
-    </div>
-  </a>
-</div>
+<button md-icon-button [mdMenuTriggerFor]="menu">
+  <md-icon>more_vert</md-icon>
+</button>
+<md-menu #menu="mdMenu">
+  <button md-menu-item>
+    <md-icon>dialpad</md-icon>
+    <span>Redial</span>
+  </button>
+  <button md-menu-item disabled>
+    <md-icon>voicemail</md-icon>
+    <span>Check voicemail</span>
+  </button>
+  <button md-menu-item>
+    <md-icon>notifications_off</md-icon>
+    <span>Disable alerts</span>
+  </button>
+</md-menu>
+
+
+<md-grid-list cols="3" >
+  <md-grid-tile *ngFor="let flower of flowers" [colspan]="1" [rowspan]="1">
+    <md-card class="example-card" >
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>{{flower.name}}</md-card-title>
+      </md-card-header>
+      <img md-card-image src="https://s-media-cache-ak0.pinimg.com/236x/8d/7c/10/8d7c10166b8a3a4c74097a805979ce8c--tattoo-filler-vintage-flowers.jpg">
+      <md-card-content>
+        <p>
+          {{flower.description}}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>

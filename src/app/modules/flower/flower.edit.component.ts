@@ -7,8 +7,7 @@ import { FlowerService } from '../../services/flower.service';
 
 @Component({
     selector: "flowers-edit",
-    templateUrl: "",
-    styleUrls: [""]
+    templateUrl: "./flower.edit.component.html"
 })
 
 export class FlowerEditComponent implements OnInit{

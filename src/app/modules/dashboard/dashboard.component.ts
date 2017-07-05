@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdGridListModule } from "@angular/material";
 
 import { Flower } from '../../services/flower';
 import { FlowerService } from '../../services/flower.service';
 
-
 @Component({
-  selector: 'dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  selector: 'dashboard-flowers',
+  templateUrl: 'dashboard.component.html',
+  styleUrls: [ 'dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
 
@@ -16,7 +16,8 @@ export class DashboardComponent implements OnInit {
   constructor(private flowerService: FlowerService) { }
 
   ngOnInit(): void {
-    this.flowerService.getFlowers()
-      .then(f_ => this.flowers = f_);
+    // this.flowerService.getFlowers()
+    //   .then((f_) => this.flowers = f_);
+    this.flowers = this.flowerService.getFlowers();
   }
 }
