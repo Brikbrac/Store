@@ -26,7 +26,16 @@ export class FlowerService {
     const url = `${this.flowersUrl}/get/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Flower)
+      .then(response => response.json() as Flower)
+      .catch(this.handleError);
+  }
+
+  update(flower: Flower): Promise<Flower> {
+    const url = `${this.flowersUrl}/edit/${flower._id}`;
+    return this.http
+      .post(url, JSON.stringify(flower), {headers: this.headers})
+      .toPromise()
+      .then(() => flower)
       .catch(this.handleError);
   }
 

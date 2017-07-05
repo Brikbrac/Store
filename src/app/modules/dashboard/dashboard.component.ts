@@ -5,7 +5,7 @@ import { FlowerService } from '../../services/flower.service';
 
 
 @Component({
-  selector: 'my-dashboard',
+  selector: 'dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ]
 })
