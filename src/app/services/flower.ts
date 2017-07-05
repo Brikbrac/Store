@@ -1,9 +1,10 @@
 export class Flower {
   _id: string;
-  name: string;
-  price : number;
   color : string;
   description : string;
+  name: string;
+  price : number;
+  
 
 }
 

@@ -11,18 +11,12 @@ import { FlowerService } from '../../services/flower.service';
 })
 export class DashboardComponent implements OnInit {
 
-  flowers: Flower[] = [];
+  flowers: Flower[];
 
   constructor(private flowerService: FlowerService) { }
 
   ngOnInit(): void {
     this.flowerService.getFlowers()
-      .then(f_ => {
-        this.flowers = f_ as Flower[];
-        console.log(this.flowers);
-        console.log(f_);
-      });
-    
-    
+      .then(f_ => this.flowers = f_);
   }
 }
