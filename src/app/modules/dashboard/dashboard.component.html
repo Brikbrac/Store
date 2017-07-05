@@ -1,6 +1,6 @@
 <h3>Top Flowers</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let flower of flowers"  [routerLink]="['/detail', flower._id]"  class="col-1-4">
+  <a *ngFor="let flower of flowers"  [routerLink]="['/product', flower._id]"  class="col-1-4">
     <div class="module hero">
       <h4>{{flower.name}}</h4>
     </div>
