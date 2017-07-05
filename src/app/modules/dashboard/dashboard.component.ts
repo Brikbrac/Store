@@ -16,8 +16,7 @@ export class DashboardComponent implements OnInit {
   constructor(private flowerService: FlowerService) { }
 
   ngOnInit(): void {
-    // this.flowerService.getFlowers()
-    //   .then((f_) => this.flowers = f_);
-    this.flowers = this.flowerService.getFlowers();
+    this.flowerService.getFlowers()
+      .then((f_) => this.flowers = f_);
   }
 }
