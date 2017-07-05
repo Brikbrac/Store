@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 
 import { Http } from '@angular/http';
